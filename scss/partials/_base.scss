@@ -1,0 +1,19 @@
+html {
+    font-family: $base-font-family;
+    font-size: 25px;
+
+    @media only screen and (min-width: 1200px) {
+        font-size: 10px;
+    }
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 30px;
+
+    @media only screen and (min-width: 1200px) {
+        max-width: 1200px;
+        padding: 0 10px;
+    }
+}

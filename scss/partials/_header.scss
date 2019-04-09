@@ -1,0 +1,43 @@
+.header {
+    background-color: black;
+    font-size: $regular-font-size;
+
+    @media only screen and (min-width: 1200px) {
+        &__container {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__logo {
+        padding: 50px 0;
+        text-align: center;
+
+        @media only screen and (min-width: 1200px) {
+            text-align: left;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__button {
+        color: white;
+        float: left;
+        font-size: $regular-font-size;
+        width: 0;
+
+        @media only screen and (min-width: 1200px) {
+            display: none;
+        }
+    }
+
+    &__link {
+        color: white;
+    }
+
+    &__accent {
+        color: $accent-color;
+        font-weight: 700;
+    }
+}
