@@ -1,0 +1,103 @@
+.slider {
+    height: calc(100vh - 147px);
+    background: linear-gradient(to bottom, #fff 40%, #c9c8d0);
+    overflow: hidden;
+
+    @media only screen and (min-width: 1200px) {
+        height: calc(100vh - 48.67px);
+    }
+
+    &__frame {
+        height: 100%;
+        position: relative;
+    }
+
+    .container {
+        padding: 0;
+    }
+
+    &__track {
+        height: 100%;
+        position: relative;
+        transition: all 400ms;
+    }
+
+    &__slide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 30px;
+
+        @media only screen and (min-width: 1200px) {
+            flex-direction: row;
+            padding: 0;
+        }
+    }
+
+    &__img {
+        width: 90%;
+
+        @media only screen and (min-width: 1200px) {
+            width: 45%;
+        }
+    }
+
+    &__content {
+        width: 100%;
+        text-align: center;
+
+        @media only screen and (min-width: 1200px) {
+            width: 35%;
+        }
+    }
+
+    &__title {
+        font-size: 3rem;
+        margin-bottom: 40px;
+        font-weight: 400;
+
+        @media only screen and (min-width: 1200px) {
+            font-size: 4rem;
+        }
+    }
+
+    &__accent {
+        font-weight: 700;
+        color: $accent-color;
+    }
+
+    &__text {
+        margin-bottom: 40px;
+        font-size: $regular-font-size;
+
+        @media only screen and (min-width: 1200px) {
+            margin-bottom: 15px;
+        }
+    }
+
+    &__nav {
+        position: absolute;
+        top: 30%;
+        left: 10px;
+        transform: translateY(-50%);
+        z-index: 2;
+        background: none;
+        border: none;
+        color: $accent-color;
+        font-size: 6rem;
+        cursor: pointer;
+
+        @media only screen and (min-width: 1200px) {
+            top: 50%;
+        }
+    }
+
+    &__nav--next {
+        left: auto;
+        right: 10px;
+    }
+}

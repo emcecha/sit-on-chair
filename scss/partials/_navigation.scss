@@ -58,6 +58,7 @@
             width: 130px;
             background: black;
             padding: 10px;
+            z-index: 999;
 
             &::before {
                 content: "";
