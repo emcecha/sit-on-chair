@@ -1,0 +1,22 @@
+.title-decor {
+    position: relative;
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+
+.title-decor--big {
+    font-size: 2rem;
+    width: 63%;
+    color: #545454;
+    padding-top: 20px;
+}
+
+.title-decor::before {
+    content: "";
+    width: 50%;
+    height: 0.7rem;
+    background-color: #24BA9F;
+    position: absolute;
+    left: 0;
+    bottom: -0.7rem;
+}
