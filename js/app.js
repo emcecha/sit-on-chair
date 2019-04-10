@@ -100,8 +100,27 @@ $(function () {
         currentSlide = targetSlide;
     }
 
+    // --------------- OFFERS - CHOWANIE TEKSTU ----------------
+
+    var offersLinks = $(".offers__link");
+
+    function hideOffersDetails() {
+
+        $(this).find(".offers__details")
+        .fadeTo(200, 0);
+    }
+
+    function showOffersDetails() {
+
+        $(this).find(".offers__details")
+        .fadeTo(200, 1);
+    }
+
+
     navLinks.on("click", showHideSublist);
     hamburgerButton.on("click", showHideNavOnMobile);
     slides.each(setSlidesPosition);
     navButtons.on("click", moveToSlide);
+    offersLinks.on("mouseover", hideOffersDetails);
+    offersLinks.on("mouseout", showOffersDetails);
 });
