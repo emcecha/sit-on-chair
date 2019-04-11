@@ -112,6 +112,21 @@ $(function () {
         .fadeTo(200, 1);
     }
 
+    // --------------- KALKULATOR ZAMÓWIENIA ----------------
+
+    var dropdownArrow = $(".calculator__arrow");
+
+    function showOptionsList() {
+
+        var optionsList = $(this).next();
+
+        if (optionsList.css("display") === "none") {
+            optionsList.slideDown("fast");
+        } else {
+            optionsList.slideUp("fast");
+        }
+    }
+
 
     navLinks.on("click", showHideSublist);
     hamburgerButton.on("click", showHideNavOnMobile);
@@ -119,4 +134,5 @@ $(function () {
     navButtons.on("click", moveToSlide);
     offersLinks.on("mouseover", hideOffersDetails);
     offersLinks.on("mouseout", showOffersDetails);
+    dropdownArrow.on("click", showOptionsList);
 });
