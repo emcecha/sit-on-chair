@@ -1,0 +1,186 @@
+.calculator {
+    background-color: $bg-two-color;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+
+        @media only screen and (min-width: 1200px) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    &__choice {
+        width: 100%;
+
+        @media only screen and (min-width: 1200px) {
+            width: 31%;
+        }
+    }
+
+    &__form {
+        margin-top: 4rem;
+    }
+
+    &__dropdown {
+        border: 0.1rem solid $accent-color;
+        width: 100%;
+        // height: 3.8rem;
+        background-color: white;
+        margin-top: 2.2rem;
+        padding: 0.8rem 1.2rem;
+        position: relative;
+    }
+
+    &__label {
+        font-size: 3rem;
+        color: $placeholder-text-color;
+    }
+
+    &__arrow {
+        width: 0;
+        height: 0;
+        border-left: 1.5rem solid transparent;
+        border-right: 1.5rem solid transparent;
+        border-top: 1.5rem solid $accent-color;
+        display:block;
+        position: absolute;
+        right: 1.4rem;
+        top: 2rem;
+        cursor: pointer;
+    }
+
+    &__list {
+        background-color: white;
+        border: 0.1rem solid $light-text-color;
+        width: 100%;
+        padding-left: 1.5rem;
+        padding-bottom: 1rem;
+        left: 0;
+        z-index: 2;
+        position: absolute;
+        top: 5.4rem;
+        display:none;
+    }
+
+    &__item {
+        margin-top: 1rem;
+        cursor: pointer;
+        color: #585858;
+        font-size: $regular-font-size;
+    }
+
+    &__figure {
+        align-self: center;
+    }
+
+    &__transport {
+        display: flex;
+        align-items: center;
+        padding: 2rem 0;
+    }
+
+    &__checkbox {
+        height: 4.8rem;
+        width: 4.8rem;
+        border: 0.1rem solid $accent-color;
+        cursor: pointer;
+    }
+
+    &__checkbox-text {
+        color: $light-text-color;
+        font-size: 3rem;
+        margin-left: 1rem;
+    }
+
+    .active {
+        background: url('../images/form_ok.jpg');
+    }
+
+    &__summary {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media only screen and (min-width: 1200px) {
+            width: 31%;
+        }
+    }
+
+    &__header--align-right {
+        text-align: right;
+        align-self: flex-end;
+    }
+
+    &__panel {
+        width: 100%;
+        background-color: white;
+        height: 20rem;
+        padding: 1rem;
+        margin-top: 4rem;
+    }
+
+    &__choice-list {
+        display: flex;
+        height: 80%;
+        width: 100%;
+    }
+
+    &__panel-left {
+        display: inline-block;
+        width: 70%;
+        padding-bottom: 1rem;
+        border-bottom: 0.1rem solid $bg-two-color;
+        height: 100%;
+    }
+
+    &__panel-right {
+        display: inline-block;
+        width: 30%;
+        border-left: 0.1rem solid $bg-two-color;
+        text-align: right;
+        padding-bottom: 1rem;
+        border-bottom: 0.1rem solid $bg-two-color;
+        height: 100%;
+    }
+
+    &__panel-title {
+        color: $accent-color;
+        font-size: 2.3rem;
+    }
+
+    &__chair {
+        margin-top: 1rem;
+        font-size: 2rem;
+        color: $light-text-color;
+        display: block;
+    }
+
+    &__value {
+        display: block;
+        font-size: 2rem;
+        color: $light-text-color;
+        margin-top:10px;
+    }
+
+    &__panel-sum {
+        display: flex;
+    }
+
+    &__sum-label {
+        width: 70%;
+        margin-top: 1rem;
+        font-size: 2.2rem;
+        color: $light-text-color;
+    }
+
+    &__sum-value {
+        width: 30%;
+        text-align: right;
+        margin-top: 1rem;
+        font-size: 2.2rem;
+        color: $accent-color;
+    }
+}

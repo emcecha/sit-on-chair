@@ -1,22 +1,31 @@
-.title-decor {
+.title-decor,
+.title-decor--right {
     position: relative;
     font-size: 1.7rem;
     font-weight: bold;
+    display: inline-block;
 }
 
 .title-decor--big {
     font-size: 2rem;
-    width: 63%;
     color: #545454;
-    padding-top: 20px;
+    padding-top: 2rem;
+}
+
+.title-decor::before,
+.title-decor--right::before {
+    content: "";
+    width: 120%;
+    height: 0.7rem;
+    background-color: $accent-color;
+    position: absolute;
+    bottom: -0.7rem;
 }
 
 .title-decor::before {
-    content: "";
-    width: 50%;
-    height: 0.7rem;
-    background-color: #24BA9F;
-    position: absolute;
     left: 0;
-    bottom: -0.7rem;
+}
+
+.title-decor--right::before {
+    right: 0;
 }
