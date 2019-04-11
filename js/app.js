@@ -73,8 +73,6 @@ $(function () {
 
         if ($(this).hasClass("slider__nav--next")) {
 
-            console.log(1);
-
             var targetSlide = currentSlide + 1;
 
             if (targetSlide === slides.length) {
@@ -83,8 +81,6 @@ $(function () {
         }
 
         if ($(this).hasClass("slider__nav--prev")) {
-
-            console.log(2);
 
             var targetSlide = currentSlide - 1;
 

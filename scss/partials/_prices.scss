@@ -1,0 +1,169 @@
+.prices {
+    background-color: $bg-two-color;
+
+    &__option-container {
+        display: flex;
+        flex-direction: column;
+        padding: 5rem 0;
+
+        @media only screen and (min-width: 1200px) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    &__option {
+        width: 100%;
+        background-color: $bg-three-color;
+        border: 0.2rem solid $light-text-color;
+        position: relative;
+        text-align: center;
+        margin-top: 5rem;
+        height: 50rem;
+
+        @media only screen and (min-width: 1200px) {
+            width: 30%;
+        }
+
+        &::before {
+            content: "";
+            height: 5rem;
+            width: 5rem;
+            border-radius: 50%;
+            background-color: white;
+            border: 0.2rem solid $light-text-color;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: -3.5rem;
+        }
+
+        &::after {
+            content: "";
+            height: 2.5rem;
+            width: 2.5rem;
+            border-radius: 50%;
+            background-color: $light-text-color;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: -2rem;
+        }
+
+        &--special {
+            background-color: $accent-color;
+            border-color: $accent-color;
+
+            &::before {
+                content: "";
+                height: 5rem;
+                width: 5rem;
+                border-radius: 50%;
+                background-color: $accent-color;
+                border: 0.2rem solid $accent-color;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                top: -3.5rem;
+            }
+
+            &::after {
+                content: "";
+                height: 2.5rem;
+                width: 2.5rem;
+                border-radius: 50%;
+                background-color: white;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                top: -2rem;
+            }
+        }
+    }
+
+    &__box {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__title {
+        text-transform: uppercase;
+        color: $accent-color;
+        font-size: 2.5rem;
+        margin: 3rem 0;
+
+        &--special {
+            color: white;
+        }
+    }
+
+    &__circle {
+        width: 12.5rem;
+        height: 12.5rem;
+        border-radius: 50%;
+        border: 0.2rem solid $light-text-color;
+        background-color: white;
+        margin: 0 auto;
+        color: $light-text-color;
+        position: relative;
+
+        &--special {
+            background-color: $bg-three-color;
+            border-color: $accent-color;
+            color: $accent-color;
+        }
+    }
+
+    &__value {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        span {
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            line-height: 2.5rem;
+            font-weight: bold;
+            display: block;
+        }
+    }
+
+    &__num {
+        font-size: 4rem;
+        padding-left: 1rem;
+    }
+
+    &__sup {
+        font-size: 1.7rem;
+        vertical-align: 2.6rem;
+    }
+
+    &__list {
+        font-size: 2.3rem;
+        margin-top: 4rem;
+    }
+
+    &__item {
+        padding: 0.7rem 0.5rem;
+        color: $light-text-color;
+
+        &--border {
+            border-top: 0.3rem solid white;
+        }
+
+        &--dark {
+            background-color: $bg-four-color;
+        }
+
+        &--light {
+            background-color: $bg-two-color;
+        }
+
+        &--special {
+            background-color: white;
+        }
+    }
+}

@@ -18,7 +18,7 @@
 
     &__box {
         margin-bottom: 50px;
-        border: 2px solid #ccc;
+        border: 0.2rem solid $light-text-color;
 
         @media only screen and (min-width: 1200px) {
             width: 32%;
@@ -53,7 +53,7 @@
     &__text {
         font-size: $regular-font-size;
         margin-top: 3rem;
-        color: #959595;
+        color: $light-text-color;
     }
 
 }

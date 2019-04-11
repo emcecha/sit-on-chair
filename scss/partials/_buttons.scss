@@ -3,14 +3,39 @@
     display: inline-block;
     color: white;
     font-size: 2.5rem;
-    margin: 20px 0;
-    padding: 15px 50px;
-    border-radius: 10px;
+    margin: 2rem 0;
+    padding: 1.5rem 5rem;
+    border-radius: 1rem;
     transition: all .3s;
     text-transform: uppercase;
 
     &:hover {
         color: $accent-color;
         background-color: white;
+    }
+
+    &--small {
+        margin: 0;
+        font-size: 1.5rem;
+        margin: 2rem 0.5rem;
+        padding: 0.7rem 3rem;
+    }
+
+    &--special {
+        background-color: white;
+        color: $accent-color;
+
+        &:hover {
+            background-color: $accent-color;
+            color: white;
+        }
+    }
+
+    &--send {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        font-weight: bold;
+        font-size: 3rem;
     }
 }
