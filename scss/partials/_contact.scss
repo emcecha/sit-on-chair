@@ -1,0 +1,113 @@
+.contact {
+    padding-bottom: 4rem;
+
+    &__header {
+        margin: 1rem 0 3rem;
+    }
+
+    &__box {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        @media only screen and (min-width: 1200px) {
+            flex-direction: row;
+        }
+    }
+
+    &__col {
+
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        @media only screen and (min-width: 1200px) {
+            padding: 0 2rem 0 0;
+        }
+
+        &--big {
+            padding-top: 3rem;
+
+            @media only screen and (min-width: 1200px) {
+                width: 62%;
+                justify-content: space-between;
+            }
+        }
+
+        &--small {
+            background-image: url("../images/red_chair.png");
+            background-repeat: no-repeat;
+            background-position-x: right;
+
+            @media only screen and (min-width: 1200px) {
+                width: 38%;
+                justify-content: flex-end;
+                padding-left: 2rem;
+                background-position-x: 4.5rem;
+            }
+        }
+    }
+
+    &__input {
+        width: 100%;
+        padding: 1rem;
+        margin-bottom: 2.5rem;
+        font-size: 3rem;
+        border: 0.1rem solid $accent-color;
+
+        &::-webkit-input-placeholder {
+            color: $placeholder-text-color;
+        }
+
+        &--textarea {
+            margin: 0;
+            resize: none;
+            height: 20rem;
+        }
+    }
+
+    &__permision {
+        margin: 3rem 0;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    &__permision-text {
+        font-size: 2rem;
+        color: $placeholder-text-color;
+        width: 55%;
+
+        @media only screen and (min-width: 1200px) {
+            width: auto;
+        }
+    }
+
+    &__checkbox-container {
+        border: solid 0.1rem $accent-color;
+        margin-right: 1.5rem;
+        padding-bottom: 0.2rem;
+        font-size: 0;
+    }
+
+    #check {
+        display: none;
+    }
+
+    &__checkbox {
+        display: block;
+        font-size: 0;
+        width: 5rem;
+        height: 5rem;
+        background-image: url("../images/check_uncheck.png");
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        background-position: left center;
+        opacity: 0;
+        transition: opacity 300ms ease-in-out;
+    }
+
+    #check:checked + .contact__checkbox {
+        background-position: right center;
+        opacity: 1;
+    }
+}

@@ -69,6 +69,8 @@ $(function () {
         });
     }
 
+    slides.each(setSlidesPosition);
+
     function moveToSlide() {
 
         if ($(this).hasClass("slider__nav--next")) {
@@ -190,7 +192,7 @@ $(function () {
 
     var calculatorItems = $(".calculator__item");
 
-    calculatorItems.on("click", function () {
+    function calculatorFormOnChoice() {
 
         var choice = this.innerText;
 
@@ -215,7 +217,7 @@ $(function () {
         actualChoicesPrices[id] = choicePrice;
 
         setSumChairPrice()
-    });
+    }
 
     var calculatorCheckbox = $(".calculator__checkbox");
 
@@ -294,11 +296,13 @@ $(function () {
         .text(calculateChairPrice() + " zł");
     }
 
+    // --------------- EVENT LISTENERY ----------------
+
     navLinks.on("click", showHideSublist);
     hamburgerButton.on("click", showHideNavOnMobile);
-    slides.each(setSlidesPosition);
     navButtons.on("click", moveToSlide);
     offersLinks.on("mouseover", hideOffersDetails);
     offersLinks.on("mouseout", showOffersDetails);
     dropdownArrow.on("click", showHideOptionsList);
+    calculatorItems.on("click", calculatorFormOnChoice);
 });
