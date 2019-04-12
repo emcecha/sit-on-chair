@@ -1,0 +1,76 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 4rem;
+
+    @media only screen and (min-width: 1200px) {
+        flex-direction: row;
+        padding-top: 4rem;
+    }
+
+    &__col-copy {
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: $light-text-color;
+        text-align: center;
+
+        @media only screen and (min-width: 1200px) {
+            width: 62%;
+            padding-right: 2rem;
+            text-align: left;
+        }
+    }
+
+    &__col-links {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding-top: 2rem;
+
+        @media only screen and (min-width: 1200px) {
+            width: 38%;
+            padding: 0 2rem;
+        }
+    }
+
+    &__social {
+        font-size: 0;
+    }
+
+    &__link {
+        display: inline-block;
+        height: 4rem;
+        width: 4rem;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 90%;
+        font-size: initial;
+
+        &--flickr {
+            background-image: url("../images/flickr.png");
+        }
+        &--vimeo {
+            background-image: url("../images/vimeo.png");
+        }
+        &--pinterest {
+            background-image: url("../images/pinterest.png");
+        }
+        &--twitter {
+            background-image: url("../images/twitter.png");
+        }
+
+        &--home {
+            width: auto;
+            height: auto;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            color: $light-text-color;
+
+            span {
+                font-weight: bold;
+            }
+        }
+    }
+}
