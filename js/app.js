@@ -127,6 +127,46 @@ $(function () {
         }
     }
 
+    var chairTypes = [
+        {
+            type: "Chair Clair",
+            price: 195
+        },
+        {
+            type: "Chair Margarita",
+            price: 299
+        },
+        {
+            type: "Chair Selena",
+            price: 349
+        }
+    ];
+
+    var chairColors = [
+        {
+            color: "czerwony",
+            price: 0
+        },
+        {
+            color: "czarny",
+            price: 48
+        },
+        {
+            color: "pomarańczowy",
+            price: 99
+        }
+    ];
+
+    var chairMaterials = [
+        {
+            material: "tkanina",
+            price: 0
+        },
+        {
+            material: "skóra",
+            price: 299
+        },
+    ]
 
     navLinks.on("click", showHideSublist);
     hamburgerButton.on("click", showHideNavOnMobile);
