@@ -262,7 +262,7 @@
                     <div class="calculator__dropdown">
                         <span class="calculator__label">Wybierz rodzaj</span>
                         <span class="calculator__arrow"></span>
-                        <ul class="calculator__list">
+                        <ul class="calculator__list" data-id="type">
                             <li class="calculator__item">Clair</li>
                             <li class="calculator__item">Margarita</li>
                             <li class="calculator__item">Selena</li>
@@ -271,7 +271,7 @@
                     <div class="calculator__dropdown">
                         <span class="calculator__label">Wybierz kolor</span>
                         <span class="calculator__arrow"></span>
-                        <ul class="calculator__list">
+                        <ul class="calculator__list" data-id="color">
                             <li class="calculator__item">Czerwony</li>
                             <li class="calculator__item">Czarny</li>
                             <li class="calculator__item">Pomarańczowy</li>
@@ -280,13 +280,13 @@
                     <div class="calculator__dropdown">
                         <span class="calculator__label">Wybierz materiał</span>
                         <span class="calculator__arrow"></span>
-                        <ul class="calculator__list">
+                        <ul class="calculator__list" data-id="material">
                             <li class="calculator__item">Tkanina</li>
                             <li class="calculator__item">Skóra</li>
                         </ul>
                     </div>
                     <div class="calculator__transport">
-                        <div class="calculator__checkbox"></div>
+                        <div class="calculator__checkbox" data-id="transport"></div>
                         <span class="calculator__checkbox-text">Transport</span>
                     </div>
                 </div>
@@ -306,16 +306,16 @@
                 <div class="calculator__panel">
                     <div class="calculator__choice-list">
                         <div class="calculator__panel-left">
-                            <h4 class="calculator__panel-title">Twój fotel</h4>
-                            <span class="calculator__chair calculator__chair--color"></span>
-                            <span class="calculator__chair calculator__chair--pattern"></span>
-                            <span class="calculator__chair calculator__chair--transport"></span>
+                            <h4 class="calculator__panel-title" data-id="type">Twój fotel</h4>
+                            <span class="calculator__chair" data-id="color"></span>
+                            <span class="calculator__chair" data-id="material"></span>
+                            <span class="calculator__chair" data-id="transport"></span>
                         </div>
                         <div class="calculator__panel-right">
-                            <h4 class="calculator__panel-title"></h4>
-                            <span class="calculator__value calculator__value--color"></span>
-                            <span class="calculator__value calculator__value--pattern"></span>
-                            <span class="calculator__value calculator__value--transport"></span>
+                            <h4 class="calculator__panel-title" data-id="type"></h4>
+                            <span class="calculator__value" data-id="color"></span>
+                            <span class="calculator__value" data-id="material"></span>
+                            <span class="calculator__value" data-id="transport"></span>
                         </div>
                     </div>
                     <div class="calculator__panel-sum">

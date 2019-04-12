@@ -116,9 +116,13 @@ $(function () {
 
     var dropdownArrow = $(".calculator__arrow");
 
-    function showOptionsList() {
+    function showHideOptionsList(el) {
 
-        var optionsList = $(this).next();
+        if (this === window) {
+            var optionsList = el;
+        } else {
+            var optionsList = $(this).next();
+        }
 
         if (optionsList.css("display") === "none") {
             optionsList.slideDown("fast");
@@ -127,46 +131,168 @@ $(function () {
         }
     }
 
-    var chairTypes = [
+    var choicesArr = [
         {
-            type: "Chair Clair",
-            price: 195
+            id: "type",
+            list: [
+                {
+                    type: "clair",
+                    price: 195
+                },
+                {
+                    type: "margarita",
+                    price: 299
+                },
+                {
+                    type: "selena",
+                    price: 349
+                }
+            ]
         },
         {
-            type: "Chair Margarita",
-            price: 299
+            id: "color",
+            list: [
+                {
+                    color: "czerwony",
+                    price: 0
+                },
+                {
+                    color: "czarny",
+                    price: 48
+                },
+                {
+                    color: "pomarańczowy",
+                    price: 99
+                }
+            ]
         },
         {
-            type: "Chair Selena",
-            price: 349
+            id: "material",
+            list: [
+                {
+                    material: "tkanina",
+                    price: 0
+                },
+                {
+                    material: "skóra",
+                    price: 299
+                }
+            ]
         }
     ];
 
-    var chairColors = [
-        {
-            color: "czerwony",
-            price: 0
-        },
-        {
-            color: "czarny",
-            price: 48
-        },
-        {
-            color: "pomarańczowy",
-            price: 99
-        }
-    ];
+    var actualChoicesPrices = {
+        type: 0,
+        color: 0,
+        material: 0,
+        transport: 0
+    }
 
-    var chairMaterials = [
-        {
-            material: "tkanina",
-            price: 0
-        },
-        {
-            material: "skóra",
-            price: 299
-        },
-    ]
+    var calculatorItems = $(".calculator__item");
+
+    calculatorItems.on("click", function () {
+
+        var choice = this.innerText;
+
+        $(this).parent()
+        .prev()
+        .prev()
+        .text(choice)
+        .css({
+            color: "#959595"
+        });
+
+        var list = $(this).parent();
+
+        showHideOptionsList(list);
+
+        var id = list.data("id");
+        addChoice(id,choice)
+
+        var choicePrice = getPrice(id,choice);
+        addChoicePrice(id,choicePrice)
+
+        actualChoicesPrices[id] = choicePrice;
+
+        setSumChairPrice()
+    });
+
+    var calculatorCheckbox = $(".calculator__checkbox");
+
+    calculatorCheckbox.on("click", function () {
+
+        $(this).toggleClass("active");
+
+        var id = $(this).data("id");
+        var choice = "";
+        var choicePrice = "";
+
+        actualChoicesPrices[id] = 0;
+
+        if ($(this).hasClass("active")) {
+
+            choice = "Transport";
+            choicePrice = 79;
+            actualChoicesPrices[id] = 79;
+        }
+
+        addChoice(id,choice);
+        addChoicePrice(id,choicePrice);
+        setSumChairPrice();
+    });
+
+    function addChoice(id,choice) {
+
+        $(".calculator__panel-left").find("[data-id=" + id + "]")
+        .text(choice);
+    }
+
+    function addChoicePrice(id,choicePrice) {
+
+        $(".calculator__panel-right").find("[data-id=" + id + "]")
+        .text(choicePrice + " zł");
+    }
+
+    function getPrice(id,choice) {
+
+        choice = choice.toLowerCase();
+
+        for (var i = 0; i < choicesArr.length; i++) {
+
+            if (choicesArr[i].id === id) {
+
+                for (var j = 0; j < choicesArr[i].list.length; j++) {
+
+                    if (choicesArr[i].list[j][id] === choice) {
+
+                        var choicePrice = choicesArr[i].list[j].price;
+                        return choicePrice;
+                    }
+
+                }
+            }
+        }
+    }
+
+    function calculateChairPrice() {
+
+        var chairPrice = 0;
+
+        for (var variable in actualChoicesPrices) {
+
+            if (actualChoicesPrices.hasOwnProperty(variable)) {
+                chairPrice += actualChoicesPrices[variable];
+            }
+        }
+
+        return chairPrice;
+    }
+
+    function setSumChairPrice() {
+
+        $(".calculator__sum-value strong")
+        .text(calculateChairPrice() + " zł");
+    }
 
     navLinks.on("click", showHideSublist);
     hamburgerButton.on("click", showHideNavOnMobile);
@@ -174,5 +300,5 @@ $(function () {
     navButtons.on("click", moveToSlide);
     offersLinks.on("mouseover", hideOffersDetails);
     offersLinks.on("mouseout", showOffersDetails);
-    dropdownArrow.on("click", showOptionsList);
+    dropdownArrow.on("click", showHideOptionsList);
 });

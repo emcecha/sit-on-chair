@@ -86,6 +86,7 @@
         width: 4.8rem;
         border: 0.1rem solid $accent-color;
         cursor: pointer;
+        background-color: white;
     }
 
     &__checkbox-text {
@@ -95,7 +96,10 @@
     }
 
     .active {
-        background: url('../images/form_ok.jpg');
+        background-image: url('../images/form_ok.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 90%;
     }
 
     &__summary {
